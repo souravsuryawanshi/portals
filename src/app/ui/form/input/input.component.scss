@@ -7,7 +7,7 @@
   @include flex_rw;
 
   width:240px;
-  height:28px;
+  height:30px;
   margin: .5rem;
   margin-bottom: 1.25rem;
 
@@ -15,7 +15,7 @@
   color: $bg;
 
   border-radius: .25rem;
-  border: .1rem solid $color_sb;
+  border: .1rem solid $bg;
   overflow: hidden;
 }
 
@@ -25,6 +25,6 @@ input{
 }
 
 input:focus{
-  border: .1rem solid $color_sb;
+  border: .1rem solid darken($color_sb,20%);
 }
 

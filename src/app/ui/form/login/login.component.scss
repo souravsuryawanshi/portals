@@ -17,9 +17,10 @@ button{
 
 
   min-width:240px;
-  height:28px;
-  background-color: $color_sb;
+  height:30px;
+ 
   border:.1rem solid $color_w;
+  background-color:darken($color_sb,10%);
 
   margin-top: 0.5rem;
   border-radius: .25rem;
@@ -33,8 +34,9 @@ button{
 
   border-radius: .5rem;
 
-  color: $color_r;
-  background-color:$color_sb;
+  color: $bg;
+  background-color: $color_sb;
+  
   border: .1rem solid $color_sb;
   border:.1rem solid $color_w;
 

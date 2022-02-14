@@ -24,10 +24,12 @@
 
 input:focus::placeholder{
         color:transparent;
+      
 }
 
 input{
   outline: none;
+  cursor: pointer;
 }
 
 
