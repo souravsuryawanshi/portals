@@ -1,1 +1,11 @@
-<input class="form-input" type="{{type}}" placeholder={{txt}}/>
+<!-- <input class="form-input" type="{{type}}" placeholder={{txt}}    /> -->
+
+
+
+<!-- here to be deleted -->
+<span class="fnt"style="color:hsl(0,100%,50%)" *ngIf="!validator">{{errorMessage}}</span>
+<input class="form-input" [ngClass]="{'red': !validator}" [type]="type" [(ngModel)]="name" name="{{type}}" (blur)="validateCred()" />
+
+
+
+

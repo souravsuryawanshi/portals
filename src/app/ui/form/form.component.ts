@@ -7,6 +7,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class FormComponent {
   submitted = false;
+  isDisabled = false;
   @Output() out = new EventEmitter();
 
   onSubmit() {
@@ -22,5 +23,9 @@ export class FormComponent {
 
   onForgot() {
     alert('Try to Recall');
+  }
+
+  itmEmitted(item: boolean) {
+    this.isDisabled = item;
   }
 }

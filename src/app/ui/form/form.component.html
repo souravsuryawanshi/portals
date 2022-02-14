@@ -3,13 +3,13 @@
 <form (submit)="onSubmit()" class="form-wrap">
      
      <div class="spc">Email</div>
-     <app-input [type]="'email'"></app-input>
+     <app-input [type]="'email'" (itm)="itmEmitted($event)"></app-input>
      <div class="spc">
      <div>Password</div>
      <div class="link1" (click)="onForgot()">Forgot Password?</div>
      </div>
-     <app-input [type]="'text'" ></app-input>
-     <app-login [name]="'Login'" (out)="onSubmit()"></app-login>
+     <app-input [type]="'password'" (itm)="itmEmitted($event)" ></app-input>
+     <app-login [name]="'Login'" [isdisabled]="isDisabled" (out)="onSubmit()"></app-login>
 </form>
 
 

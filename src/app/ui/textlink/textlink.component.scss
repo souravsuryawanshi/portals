@@ -15,5 +15,5 @@ color: $color_r;
 }
 
 .lnk:hover{
-  color: darken($color_r,20%);
+  color: lighten($color_r,10%);
 }

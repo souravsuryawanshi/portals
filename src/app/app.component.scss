@@ -13,7 +13,7 @@
     margin: 0;
     @include flex_rw;
     justify-content: flex-start;
-    padding-left: 185px;
+    padding-left:14% ;   //185px
     background-color: $bg;
   }
 .test{

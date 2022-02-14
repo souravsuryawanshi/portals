@@ -7,6 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class LoginComponent {
   @Input() name = '';
+  @Input() isdisabled = true;
   @Output() out = new EventEmitter();
 
   onLoginHandler() {
