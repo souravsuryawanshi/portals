@@ -1,0 +1,10 @@
+@import '../../configure';
+@import '../../variables';
+
+.test{
+  width:280px;
+  min-height:28px;
+  background-color: $color_y;
+  border-radius: .3rem;
+  margin:.4rem;
+}

@@ -1,0 +1,35 @@
+@import '../../../configure';
+@import '../../../variables';
+
+
+.burger{
+  position: absolute;
+  top:.75rem;
+  right:1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31px;
+  height: 21px;
+
+
+.bar{
+  height: 3px;
+  width:100%;
+  background-color: $color_w;
+  border-radius:10px;
+
+}
+
+}
+
+
+
+
+
+@media (max-width:855px){
+
+   .burger{
+      display: flex;
+   }
+  }

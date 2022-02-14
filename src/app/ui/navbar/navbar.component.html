@@ -1,0 +1,22 @@
+<div class="navbar-container">
+
+       <div class="logo">
+         Portals-FE
+        </div>
+
+       <app-links [linkName]="'About'"></app-links>
+
+       <app-links [linkName]="'Products'"> </app-links>
+
+       <app-links [linkName]="'For Teams'"> </app-links>
+
+       <app-search [search]="'Search here...'"></app-search>
+
+
+       <app-links [linkName]="'Login'"> </app-links>
+
+       <app-links [linkName]="'Register'"> </app-links>
+
+       <app-burger (out)="onBurgerClick($event)"></app-burger>
+
+</div>

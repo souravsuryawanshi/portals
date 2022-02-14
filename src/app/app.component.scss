@@ -1,0 +1,31 @@
+@import './configure';
+@import './variables';
+
+.root{
+  @include flex_clmn;
+}
+
+
+.mock{
+
+   background-color: $color_w;
+   width: 22%;
+   min-height: 2rem;;
+   margin-top: 1rem;
+   @include flex_clmn;
+   align-items: center;
+
+   border-radius: .3rem;
+}
+.test{
+   background-color: $bg;
+  width: 22%;
+  min-height: 240px;
+  @include flex_clmn;
+  align-items: center;
+  border: .1rem solid $color_y;
+  border-radius: .3rem;
+  margin-top: 1.75rem;
+
+
+}

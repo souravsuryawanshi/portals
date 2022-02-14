@@ -1,0 +1,19 @@
+@import '../../configure';
+@import '../../variables';
+
+.txtlnk{
+   @include flex_rw;
+   color: $color_y;
+   margin: .9rem;
+}
+
+
+
+.lnk{
+text-decoration: none;
+color: $color_r;
+}
+
+.lnk:hover{
+  color:$color_sb;
+}

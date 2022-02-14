@@ -1,0 +1,41 @@
+@import '../../configure';
+@import '../../variables';
+
+
+
+.form-wrap{
+  background-color: $color_w;
+  width: 280px;
+  min-height: 225px;
+  @include flex_clmn;
+  border: .1rem solid $color_y;
+  border-radius: .3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+}
+
+.spc{
+  width:80%;
+  @include flex_rw;
+  justify-content: space-between;
+  color: $bg;
+
+}
+
+.link1{
+  font-size: .75rem;
+  color: darken($color_r, 5%);
+  font-weight: 600;
+}
+
+.link1:hover{
+
+ color: darken($color_r,10%);
+}
+
+@media(max-width:300px){
+  .form-wrap{
+
+  }
+}
