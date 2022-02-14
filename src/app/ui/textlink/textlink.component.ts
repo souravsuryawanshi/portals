@@ -8,4 +8,8 @@ import { Component, Input } from '@angular/core';
 export class TextLinkComponent {
   @Input() txt = '';
   @Input() link = '';
+
+  onClickHandler() {
+    alert('Not Registering You');
+  }
 }

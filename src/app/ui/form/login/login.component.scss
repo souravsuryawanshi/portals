@@ -1,6 +1,14 @@
 @import '../../../configure';
 @import '../../../variables';
 
+button{
+  font:inherit;
+  background: none;
+  padding:0;
+  border: none;
+  cursor:pointer;
+  outline: inherit;
+}
 
 .login-wrap{
 

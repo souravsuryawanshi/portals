@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portals';
+
+  loggedIn = false;
+
+  isLogging(item: boolean) {
+    this.loggedIn = item;
+  }
 }

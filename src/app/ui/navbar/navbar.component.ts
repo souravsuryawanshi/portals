@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +7,16 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   clicked: boolean = false;
+  @Input() isLoggedIn = false;
+  @Output() out = new EventEmitter();
+
   onBurgerClick(event: boolean) {
     this.clicked = event;
     console.log(this.clicked);
+  }
+
+  loggingOut() {
+    this.isLoggedIn = false;
+    this.out.emit(false);
   }
 }

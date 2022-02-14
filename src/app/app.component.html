@@ -1,10 +1,10 @@
 
-<app-navbar class="root"></app-navbar>
+<app-navbar [isLoggedIn]="loggedIn" (out)="isLogging($event)"    class="root"></app-navbar>
 <app-logo class="root"></app-logo>
 <app-mock class="root"></app-mock>
 <app-mock class="root"></app-mock>
 <app-mock class="root"></app-mock>
-<app-form class="root"></app-form>
+<app-form (out)="isLogging($event)" class="root"></app-form>
 
 <app-textlink class="root"  [txt]="'Do not have an account?...'" [link]="'Register Here'"></app-textlink>
 

@@ -13,9 +13,9 @@
        <app-search [search]="'Search here...'"></app-search>
 
 
-       <app-links [linkName]="'Login'"> </app-links>
-
-       <app-links [linkName]="'Register'"> </app-links>
+       <app-links  *ngIf="!isLoggedIn"[linkName]="'Login'"> </app-links>
+       <app-links  *ngIf="isLoggedIn" (out)="loggingOut()" [linkName]="'Logout'" (click)="loggingOut()"> </app-links>
+       <app-links  *ngIf="!isLoggedIn"[linkName]="'Register'"> </app-links>
 
        <app-burger (out)="onBurgerClick($event)"></app-burger>
 
