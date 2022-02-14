@@ -3,7 +3,7 @@
 
 .txtlnk{
    @include flex_rw;
-   color: $color_y;
+   color: $color_w;
    margin: .9rem;
 }
 
@@ -15,5 +15,5 @@ color: $color_r;
 }
 
 .lnk:hover{
-  color:$color_sb;
+  color: darken($color_r,20%);
 }

@@ -1,10 +1,27 @@
 
-<app-navbar [isLoggedIn]="loggedIn" (out)="isLogging($event)"    class="root"></app-navbar>
+<app-navbar class="root" [isLoggedIn]="loggedIn" (out)="isLogging($event)"></app-navbar>
+
+<div class="frm">
+  <app-form (out)="isLogging($event)" class="root"></app-form>
+</div>
+
+
+<div class="test">
+        <div class="contain">
+          <div class="contain-wrap">
+              <div class="dark">
+                 
+  <app-textlink class="root"  [txt]="'Do not have an account?...'" [link]="'Register Here'"></app-textlink>   
+                    
+              </div>
+          </div>
+          <div class="extra"> </div>
+        </div>
+        
+      <div class="light">
+<!-- <app-mock class="root"></app-mock>
+<app-mock class="root"></app-mock>
+<app-mock class="root"></app-mock> -->
 <app-logo class="root"></app-logo>
-<app-mock class="root"></app-mock>
-<app-mock class="root"></app-mock>
-<app-mock class="root"></app-mock>
-<app-form (out)="isLogging($event)" class="root"></app-form>
-
-<app-textlink class="root"  [txt]="'Do not have an account?...'" [link]="'Register Here'"></app-textlink>
-
+      </div>
+</div>
