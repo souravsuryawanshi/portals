@@ -9,11 +9,11 @@
 
 @media screen and(min-width:850px){
   .frm{
-    padding-top:40px;
+    padding-top:80px;
     margin: 0;
     @include flex_rw;
     justify-content: flex-start;
-    padding-left: 210px;
+    padding-left: 185px;
     background-color: $bg;
   }
 .test{

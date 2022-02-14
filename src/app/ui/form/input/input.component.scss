@@ -6,20 +6,25 @@
   font-family: Verdana, Tahoma, sans-serif;
   @include flex_rw;
 
-  width:224px;
+  width:240px;
   height:28px;
   margin: .5rem;
+  margin-bottom: 1.25rem;
 
   background-color: $color_w;
   color: $bg;
 
   border-radius: .25rem;
-  border: .1rem solid lighten($color_y,15%);
+  border: .1rem solid $color_sb;
   overflow: hidden;
 }
 
 
 input{
   outline: none;
+}
+
+input:focus{
+  border: .1rem solid $color_sb;
 }
 

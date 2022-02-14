@@ -5,17 +5,23 @@
 
 .form-wrap{
   background-color: $color_w;
-  width: 260px;
-  min-height: 300px;
+  width: 300px;
+  min-height: 350px;
   @include flex_clmn;
   border: .1rem solid $color_w;
   border-radius: 1rem;
   margin-top: 1.5rem;
+
   margin-bottom: 1.5rem;
+  
 
 }
 
+.form-wrap:hover{
+  border: .175rem solid $color_sb;
+}
 .spc{
+  margin-bottom: .75rem;
   width:80%;
   @include flex_rw;
   justify-content: space-between;

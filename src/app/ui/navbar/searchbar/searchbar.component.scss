@@ -11,13 +11,11 @@
   color: $bg;
 
   border-radius: .25rem;
-  border: .1rem solid lighten($color_y,15%);
+  border: .1rem solid $color_sb;
   overflow: hidden;
 }
 
-.search-wrap:hover{
-  border:.1rem solid $color_sb;
-}
+
 
 ::placeholder{
   opacity: 1;
