@@ -7,10 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portals';
+  show: boolean = false;
 
   loggedIn = false;
 
   isLogging(item: boolean) {
     this.loggedIn = item;
+  }
+
+  toDisplay(item: boolean) {
+    this.show = item;
+  }
+
+  toDisplayed(item: boolean) {
+    this.show = !item;
   }
 }

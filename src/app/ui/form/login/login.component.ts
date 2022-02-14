@@ -9,7 +9,6 @@ export class LoginComponent {
   @Input() name = '';
   @Output() out = new EventEmitter();
 
-
   onLoginHandler() {
     console.log('logged in');
     this.out.emit(true);

@@ -1,8 +1,8 @@
 
-<app-navbar class="root" [isLoggedIn]="loggedIn" (out)="isLogging($event)"></app-navbar>
+<app-navbar class="root"  [isLoggedIn]="loggedIn" (out)="isLogging($event)" (show)="toDisplay($event)" (open)="toDisplay($event)"></app-navbar>
 
 <div class="frm">
-  <app-form (out)="isLogging($event)" class="root"></app-form>
+  <app-form *ngIf="show"  (out)="isLogging($event)" (out)="toDisplayed($event)"class="root"></app-form>
 </div>
 
 
@@ -11,7 +11,7 @@
           <div class="contain-wrap">
               <div class="dark">
                  
-  <app-textlink class="root"  [txt]="'Do not have an account?...'" [link]="'Register Here'"></app-textlink>   
+  <app-textlink class="root"  *ngIf="show"[txt]="'Do not have an account?...'" [link]="'Register Here'"></app-textlink>   
                     
               </div>
           </div>

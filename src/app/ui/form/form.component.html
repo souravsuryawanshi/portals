@@ -8,7 +8,7 @@
      <div class="link1" (click)="onForgot()">Forgot Password?</div>
      </div>
      <app-input [type]="'text'" ></app-input>
-     <app-login [name]="'Login'"></app-login>
+     <app-login [name]="'Login'" (out)="onSubmit()"></app-login>
 </form>
 
 
