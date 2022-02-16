@@ -42,16 +42,16 @@ export class FormComponent {
       let result = true;
 
       if (this.value.trim().length < 1) {
-        this.errorMessage = 'Username cannot be empty!';
+        this.errorMessage = 'Email field cannot be empty!';
         result = false;
       } else if (
         this.value.trim().length < 6 ||
         this.value.trim().length > 40
       ) {
-        this.errorMessage = 'Invalid Username';
+        this.errorMessage = 'Invalid Email ';
         result = false;
       } else if (!this.emailValidate.test(this.value)) {
-        this.errorMessage = 'Should be abc@example.domain';
+        this.errorMessage = 'Email should be abc@example.domain';
         result = false;
       }
 
