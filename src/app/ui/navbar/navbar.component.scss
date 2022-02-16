@@ -21,8 +21,10 @@
 
 
 
-@media screen and (max-width:855px){
+@media screen and (max-width:872px){     //changed from 855px to 872px; try reverting it?
       .navbar-container{
         @include flex_clmn;
+        padding-left: 1rem;
+        align-items: flex-start;
       }
 }

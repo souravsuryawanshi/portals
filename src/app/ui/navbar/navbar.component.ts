@@ -6,15 +6,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  clicked: boolean = false;
   @Input() isLoggedIn = false;
+  burgerClick = false;
+  clicked = false;
   @Output() out = new EventEmitter();
   @Output() show = new EventEmitter();
   @Output() open = new EventEmitter();
 
   onBurgerClick(event: boolean) {
-    this.clicked = event;
-    console.log(this.clicked);
+    this.clicked = true;
+    this.burgerClick = !this.burgerClick;
+    // console.log(this.burgerClick);
   }
   display(item: boolean) {
     this.show.emit(item);

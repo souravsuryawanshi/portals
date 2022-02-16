@@ -5,7 +5,7 @@
    @include flex_rw;
    color: $color_w;
    margin: .9rem;
-   
+
 }
 
 
@@ -17,4 +17,9 @@ color: $color_r;
 
 .lnk:hover{
   color: lighten($color_r,10%);
+}
+@media screen and (max-width:602px){
+  .lnk{
+    // margin-left: 0;
+  }
 }

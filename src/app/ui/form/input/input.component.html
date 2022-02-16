@@ -9,5 +9,6 @@
 
 
 <span class="fnt"style="color:hsl(0,100%,50%)" *ngIf="!fieldValues.validated">{{fieldValues.errorMessage}}</span>
-<input class="form-input" [ngClass]="{'red': !fieldValues.validated}" [type]="fieldValues.type" [(ngModel)]="fieldValues.value" name="fieldValues.name" (blur)="fieldValues.isValid()" />
+<input class="form-input" [ngClass]="{'red': !fieldValues.validated}" [type]="fieldValues.type" [(ngModel)]="fieldValues.value" name="fieldValues.name" (input)="fieldValues.isValid()" />
 
+<!--  input, keyup for immediate triggering -->

@@ -46,7 +46,7 @@ export class FormComponent {
         result = false;
       } else if (
         this.value.trim().length < 6 ||
-        this.value.trim().length > 25
+        this.value.trim().length > 40
       ) {
         this.errorMessage = 'Invalid Username';
         result = false;
@@ -74,11 +74,10 @@ export class FormComponent {
       if (this.value.trim().length < 1) {
         this.errorMessage = 'Password cannot be empty!';
         result = false;
+      } else if (this.value.trim().length > 12) {
+        this.errorMessage = 'Password cannot be more than 12 letters';
+        result = false;
       }
-      //  else if (this.value.trim().length < 6) {
-      //   this.errorMessage = 'Invalid Password';
-      //   result = false;
-      // }
       this.validated = result;
       this.disable = result;
       return result;

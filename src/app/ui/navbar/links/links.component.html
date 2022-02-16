@@ -1,1 +1,4 @@
-<div class="links" (click)="onClickHandler()" >{{ linkName }}</div>
+<div class='links' [ngClass]="{'links': !isClicked,'links1':toggle, 'links2': !toggle}" (click)="onClickHandler()" >{{ linkName }}</div>
+<!-- <div class='links'  (click)="onClickHandler()" >{{ linkName }}</div> -->
+
+<!-- [ngClass]="{'links': !isClicked, 'links1':toggle, 'links2': !toggle}"  -->

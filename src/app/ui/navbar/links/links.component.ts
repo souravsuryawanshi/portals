@@ -1,4 +1,3 @@
-import { FormsModule } from '@angular/forms';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-links',
@@ -7,8 +6,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class LinksComponent {
   @Input() linkName = '';
-  @Input() burgerClick: boolean = false;
-
+  @Input() isClicked: any;
+  @Input() toggle: any;
   @Output() out = new EventEmitter();
 
   onClickHandler() {
