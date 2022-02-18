@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   show: boolean = false;
-  loggedIn = false;
+  loggedIn: boolean = false;
 
   onEvent(item: any) {
     switch (item.type) {
