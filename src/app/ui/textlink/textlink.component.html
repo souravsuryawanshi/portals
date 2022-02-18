@@ -1,4 +1,4 @@
 <div class="txtlnk">
-  <div>{{txt}} </div>
-  <div class="lnk" (click)="onClickHandler()">{{link}}</div>
+  <div><ng-content select="[text]"></ng-content> </div>
+  <div class="lnk" (click)="onClickHandler()"><ng-content ></ng-content></div>
 </div>

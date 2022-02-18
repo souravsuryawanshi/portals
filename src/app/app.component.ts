@@ -6,20 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'portals';
   show: boolean = false;
-
   loggedIn = false;
 
-  isLogging(item: boolean) {
-    this.loggedIn = item;
-  }
+  onEvent(item: any) {
+    switch (item.type) {
+      case 'log_out':
+        this.loggedIn = item.value;
+        this.show = !item.value;
+        break;
 
-  toDisplay(item: boolean) {
-    this.show = item;
-  }
+      case 'form_submitted':
+        this.show = !item.value;
+        this.loggedIn = true;
+        break;
 
-  toDisplayed(item: boolean) {
-    this.show = !item;
+      case 'display_form':
+        this.show = item.value;
+    }
   }
 }

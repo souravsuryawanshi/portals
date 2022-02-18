@@ -1,28 +1,25 @@
-
-
-<!-- <form (submit)="onSubmit()" class="form-wrap">
-     
-     <div class="spc">Email</div>
-     <app-input [type]="'email'" (itm)="itmEmitted($event)"></app-input>
-     <div class="spc">
-     <div>Password</div>
-     <div class="link1" (click)="onForgot()">Forgot Password?</div>
-     </div>
-     <app-input [type]="'password'" (itm)="itmEmitted($event)" ></app-input>
-     <app-login [name]="'Login'" [isdisabled]="isDisabled" (out)="onSubmit()"></app-login>
-</form> -->
-
-
-
 <form (submit)="onSubmit()" class="form-wrap">
-     
-  <div class="spc">Email</div>
-  <app-input [fieldValues]="usernameValues"></app-input>
-  <div class="spc">
-  <div>Password</div>
-  <div class="link1" (click)="onForgot()">Forgot Password?</div>
+
+  <div class="space">Email</div>
+
+  <app-input [fieldValues]="usernameValues"
+    [submitFailed]="usernameValues.submitFail" >
+  </app-input>
+
+  <div class="space">
+     <div>Password</div>
+     <div class="link" (click)="onForgot()">Forgot Password?</div>
   </div>
-  <app-input [fieldValues]="passwordValues"></app-input>
-  <app-login [name]="'Login'" [isdisabled]="usernameValues.disable && passwordValues.disable"></app-login>
+
+  <app-input [fieldValues]="passwordValues"
+   [submitFailed]="passwordValues.pwd_submitFail" >
+  </app-input>
+
+  <app-login  [isdisabled]="usernameValues.disable && passwordValues.disable">
+    Login
+  </app-login>
+
 </form>
+
+
 

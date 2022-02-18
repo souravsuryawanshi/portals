@@ -1,27 +1,39 @@
 
-<app-navbar class="root"  [isLoggedIn]="loggedIn" (out)="isLogging($event)" (show)="toDisplay($event)" (open)="toDisplay($event)"></app-navbar>
+<app-navbar class="root"
+ [isLoggedIn]="loggedIn"
+ (out)="onEvent($event)" >
+</app-navbar>
 
 <div class="frm">
-  <app-form *ngIf="show"  (out)="isLogging($event)" (out)="toDisplayed($event)"class="root"></app-form>
+    <app-form class="root"
+      *ngIf="show"
+      (out)="onEvent($event)" >
+    </app-form>
 </div>
 
 
 <div class="test">
-        <div class="contain">
+      <div class="contain">
           <div class="contain-wrap">
               <div class="dark">
-                 
-  <app-textlink class="root"  *ngIf="show"[txt]="'Do not have an account?...'" [link]="'Register Here'"></app-textlink>   
-                    
+                        <app-textlink class="root" *ngIf="show">
+
+                            <p text>Do not have an account?...</p>
+                            <p>Register Here</p>
+
+                        </app-textlink>
+
               </div>
           </div>
-          <div class="extra"> </div>
-        </div>
-        
-      <div class="light">
-<!-- <app-mock class="root"></app-mock>
-<app-mock class="root"></app-mock>
-<app-mock class="root"></app-mock> -->
-<app-logo class="root"></app-logo>
+
+          <div class="extra">
+          </div>
+
       </div>
+
+      <div class="light">
+          <app-logo class="root">
+          </app-logo>
+      </div>
+
 </div>

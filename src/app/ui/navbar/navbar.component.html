@@ -4,18 +4,18 @@
          Portals-FE
         </div>
 
-       <app-links [isClicked]="clicked"  [toggle]="burgerClick" [linkName]="'About'"></app-links>
+       <app-links [isClicked]="clicked"  [toggle]="burgerClick">About</app-links>
 
-       <app-links [isClicked]="clicked" [toggle]="burgerClick"  [linkName]="'Products'"> </app-links>
+       <app-links [isClicked]="clicked" [toggle]="burgerClick"> Products </app-links>
 
-       <app-links [isClicked]="clicked" [toggle]="burgerClick" [linkName]="'For Teams'"> </app-links>
+       <app-links [isClicked]="clicked" [toggle]="burgerClick"> For Teams</app-links>
 
-       <app-search [search]="'Search here...'"></app-search>
+       <app-search [search]="'Search here...'"> </app-search>
 
 
-       <app-links [isClicked]="clicked" [toggle]="burgerClick"  *ngIf="!isLoggedIn" (out)="display($event)"[linkName]="'Login'"> </app-links>
-       <app-links [isClicked]="clicked" [toggle]="burgerClick"  *ngIf="isLoggedIn" (out)="loggingOut()" (out)="formOpen($event)" [linkName]="'Logout'" (click)="loggingOut()"> </app-links>
-       <app-links [isClicked]="clicked" [toggle]="burgerClick"  *ngIf="!isLoggedIn"[linkName]="'Register'"> </app-links>
+       <app-links [isClicked]="clicked" [toggle]="burgerClick"  *ngIf="!isLoggedIn" (out)="displayForm($event)"> Login </app-links>
+       <app-links [isClicked]="clicked" [toggle]="burgerClick"  *ngIf="isLoggedIn"  (out)="logOut($event)">Logout</app-links>
+       <app-links [isClicked]="clicked" [toggle]="burgerClick"  *ngIf="!isLoggedIn"> Register </app-links>
 
        <app-burger (out)="onBurgerClick($event)"></app-burger>
 

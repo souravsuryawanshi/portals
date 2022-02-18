@@ -6,22 +6,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent {
-  // emailValidate = new RegExp(/[A-Za-z0-9_\\.\\+-]+@[A-Za-z0-9-]+\\.[a-z]{2,3}/);
-
-  submitted = false;
-  // isDisabled = false;
   @Output() out = new EventEmitter();
-
-  onSubmit() {
-    this.submitted = true;
-    console.log(this.submitted);
-    this.out.emit(true);
-  }
-
-  // isSubmitted() {
-  //   console.log('submit success!');
-  //   return this.submitted;
-  // }
 
   onForgot() {
     alert('Try to Recall');
@@ -38,17 +23,12 @@ export class FormComponent {
     disable: false,
     type: 'email',
     validated: true,
+    submitFail: false,
     isValid: function () {
       let result = true;
 
       if (this.value.trim().length < 1) {
         this.errorMessage = 'Email field cannot be empty!';
-        result = false;
-      } else if (
-        this.value.trim().length < 6 ||
-        this.value.trim().length > 40
-      ) {
-        this.errorMessage = 'Invalid Email ';
         result = false;
       } else if (!this.emailValidate.test(this.value)) {
         this.errorMessage = 'Email should be abc@example.domain';
@@ -56,10 +36,11 @@ export class FormComponent {
       }
 
       this.validated = result;
-      this.disable = result;
-      return result;
+      this.disable = !result;
+      if (result) this.submitFail = false;
     },
-    errorMessage: '',
+
+    errorMessage: 'Email is required',
   };
 
   passwordValues = {
@@ -68,21 +49,33 @@ export class FormComponent {
     value: '',
     type: 'password',
     disable: false,
-
+    pwd_submitFail: false,
     isValid: function () {
       let result = true;
       if (this.value.trim().length < 1) {
-        this.errorMessage = 'Password cannot be empty!';
-        result = false;
-      } else if (this.value.trim().length > 12) {
-        this.errorMessage = 'Password cannot be more than 12 letters';
+        this.errorMessage = 'Password is required!';
         result = false;
       }
       this.validated = result;
-      this.disable = result;
-      return result;
+      this.disable = !result;
+      if (result) this.pwd_submitFail = false;
     },
+
     validated: true,
-    errorMessage: '',
+    errorMessage: 'Password is required',
   };
+
+  onSubmit() {
+    if (this.usernameValues.value.length < 1) {
+      this.usernameValues.submitFail = true;
+    }
+    if (this.passwordValues.value.length < 1) {
+      this.passwordValues.pwd_submitFail = true;
+    } else if (this.usernameValues.validated && this.passwordValues.validated) {
+      this.out.emit({
+        type: 'form_submitted',
+        value: true,
+      });
+    }
+  }
 }

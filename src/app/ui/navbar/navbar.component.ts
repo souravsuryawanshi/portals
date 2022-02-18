@@ -9,24 +9,26 @@ export class NavbarComponent {
   @Input() isLoggedIn = false;
   burgerClick = false;
   clicked = false;
+
   @Output() out = new EventEmitter();
-  @Output() show = new EventEmitter();
-  @Output() open = new EventEmitter();
 
-  onBurgerClick(event: boolean) {
-    this.clicked = true;
+  onBurgerClick(item: boolean) {
+    this.clicked = item;
     this.burgerClick = !this.burgerClick;
-    // console.log(this.burgerClick);
-  }
-  display(item: boolean) {
-    this.show.emit(item);
-  }
-  loggingOut() {
-    this.isLoggedIn = false;
-    this.out.emit(false);
   }
 
-  formOpen(item: boolean) {
-    this.open.emit(true);
+  logOut(item: boolean) {
+    this.isLoggedIn = !item;
+    this.out.emit({
+      type: 'log_out',
+      value: !item,
+    });
+  }
+
+  displayForm(item: boolean) {
+    this.out.emit({
+      type: 'display_form',
+      value: item,
+    });
   }
 }

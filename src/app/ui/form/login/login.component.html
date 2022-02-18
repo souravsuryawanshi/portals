@@ -1,1 +1,1 @@
-<button class="login-wrap" type="submit" (click)="onLoginHandler()" [disabled]="!isdisabled" >{{ name }}</button>
+<button class="login-wrap" type="submit" [disabled]="isdisabled"  ><ng-content></ng-content></button>

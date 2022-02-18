@@ -15,14 +15,14 @@
   margin-bottom: 1.5rem;
 
   box-sizing: border-box;
-  
+
 
 }
 
 
 
-.spc{
-  
+.space{
+
   margin-bottom: .75rem;
   width:80%;
   @include flex_rw;
@@ -31,13 +31,13 @@
 
 }
 
-.link1{
+.link{
   font-size: .75rem;
   color: darken($color_r, 5%);
   font-weight: 600;
 }
 
-.link1:hover{
+.link:hover{
 
  color: darken($color_r,10%);
 }

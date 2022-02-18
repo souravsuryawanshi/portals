@@ -8,9 +8,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class BurgerComponent {
   @Output() out = new EventEmitter();
 
-  isActive = true;
-
-  onClickActive() {
-    this.out.emit(this.isActive);
+  onClickHandler() {
+    this.out.emit(true);
   }
 }

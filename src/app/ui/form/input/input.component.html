@@ -1,14 +1,12 @@
-<!-- <input class="form-input" type="{{type}}" placeholder={{txt}}    /> -->
+<span class="fnt"
+ *ngIf="!fieldValues.validated || submitFailed ">
+    {{fieldValues.errorMessage}}
+ </span>
 
+<input class="form-input"
+ [ngClass]="{'red': !fieldValues.validated || submitFailed }"
+ [type]="fieldValues.type"
+ [(ngModel)]="fieldValues.value"
+  name="fieldValues.name"
+  (input)="fieldValues.isValid()" />
 
-
-<!-- here to be deleted -->
-<!-- <span class="fnt"style="color:hsl(0,100%,50%)" *ngIf="!validator">{{errorMessage}}</span>
-<input class="form-input" [ngClass]="{'red': !validator}" [type]="type" [(ngModel)]="name" name="{{type}}" (blur)="validateCred()" />
- -->
-
-
-<span class="fnt"style="color:hsl(0,100%,50%)" *ngIf="!fieldValues.validated">{{fieldValues.errorMessage}}</span>
-<input class="form-input" [ngClass]="{'red': !fieldValues.validated}" [type]="fieldValues.type" [(ngModel)]="fieldValues.value" name="fieldValues.name" (input)="fieldValues.isValid()" />
-
-<!--  input, keyup for immediate triggering -->
