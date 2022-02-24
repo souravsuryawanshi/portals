@@ -1,14 +1,20 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
+import { LoginStatus } from 'src/app/services/authenticate.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  @Input() isLoggedIn = false;
   burgerClick = false;
   clicked = false;
+  login_status: boolean = false;
+
+  constructor(private _log: LoginStatus) {
+    this._log
+      .getStream()
+      .subscribe((res: any) => (this.login_status = res.login_status));
+  }
 
   @Output() out = new EventEmitter();
 
@@ -17,18 +23,11 @@ export class NavbarComponent {
     this.burgerClick = !this.burgerClick;
   }
 
-  logOut(item: boolean) {
-    this.isLoggedIn = !item;
-    this.out.emit({
-      type: 'log_out',
-      value: !item,
-    });
+  showLoginForm(item: boolean) {
+    this._log.showLoginForm();
   }
 
-  displayForm(item: boolean) {
-    this.out.emit({
-      type: 'display_form',
-      value: item,
-    });
+  logoutClicked(item: boolean) {
+    this._log.logoutClicked();
   }
 }

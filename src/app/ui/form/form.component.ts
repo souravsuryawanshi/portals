@@ -1,12 +1,12 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-
+import { LoginStatus } from 'src/app/services/authenticate.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent {
-  @Output() out = new EventEmitter();
+  constructor(private _log: LoginStatus) {}
 
   onForgot() {
     alert('Try to Recall');
@@ -68,14 +68,10 @@ export class FormComponent {
   onSubmit() {
     if (this.usernameValues.value.length < 1) {
       this.usernameValues.submitFail = true;
-    }
-    if (this.passwordValues.value.length < 1) {
+    } else if (this.passwordValues.value.length < 1) {
       this.passwordValues.pwd_submitFail = true;
     } else if (this.usernameValues.validated && this.passwordValues.validated) {
-      this.out.emit({
-        type: 'form_submitted',
-        value: true,
-      });
+      this._log.onLoginSuccess();
     }
   }
 }

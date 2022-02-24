@@ -1,28 +1,16 @@
 import { Component } from '@angular/core';
-
+import { LoginStatus } from './services/authenticate.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  show: boolean = false;
-  loggedIn: boolean = false;
+  show_login_form: boolean = false;
 
-  onEvent(item: any) {
-    switch (item.type) {
-      case 'log_out':
-        this.loggedIn = item.value;
-        this.show = !item.value;
-        break;
-
-      case 'form_submitted':
-        this.show = !item.value;
-        this.loggedIn = true;
-        break;
-
-      case 'display_form':
-        this.show = item.value;
-    }
+  constructor(private _log: LoginStatus) {
+    this._log
+      .getStream()
+      .subscribe((res: any) => (this.show_login_form = res.show_login_form));
   }
 }
