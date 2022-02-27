@@ -66,7 +66,13 @@ export class FormComponent {
   };
 
   onSubmit() {
-    if (this.usernameValues.value.length < 1) {
+    if (
+      this.usernameValues.value.length < 1 &&
+      this.passwordValues.value.length < 1
+    ) {
+      this.usernameValues.submitFail = true;
+      this.passwordValues.pwd_submitFail = true;
+    } else if (this.usernameValues.value.length < 1) {
       this.usernameValues.submitFail = true;
     } else if (this.passwordValues.value.length < 1) {
       this.passwordValues.pwd_submitFail = true;
